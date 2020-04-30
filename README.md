@@ -1,2 +1,4 @@
-# TestingTwo
-# TestingTwo
+[![Build Status](https://travis-ci.org/UgryumovM/TestingOne.svg?branch=master)](https://travis-ci.org/UgryumovM/TestingOne)
+[![Coverage Status](https://coveralls.io/repos/UgryumovM/TestingOne/badge.svg?branch=master)](https://coveralls.io/github/UgryumovM/TestingOne?branch=master)
+[![Quality Gate](https://sonarcloud.io/api/project_badges/measure?project=qmake-gtest&metric=alert_status)](https://sonarcloud.io/dashboard?id=UgryumovM_TestingOne)
+[![Code smells](https://sonarcloud.io/api/project_badges/measure?project=qmake-gtest&metric=code_smells)](https://sonarcloud.io/dashboard?id=UgryumovM_TestingOne)
