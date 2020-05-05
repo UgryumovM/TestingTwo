@@ -29,7 +29,7 @@ void process_forward(
     /* Текст ненулевой длины должен содержать хотя бы одну строку */
     assert(!txt->node->empty());
     /* Стартуем с начальной строки текста */
-    auto current = txt->node->begin();
+    std::list<string>::iterator current = txt->node->begin();
     int index = 0;
     int cursor_position = -1;
     
