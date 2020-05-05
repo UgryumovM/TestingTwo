@@ -44,8 +44,8 @@ TEST(moveTest, Neg){
     ASSERT_EQ(getcursorp(txt), 0);
     ASSERT_EQ(getcursorl(txt), 1);
 
-    m(txt, 3, 12);
-    ASSERT_EQ(getcursorp(txt), 11);
+    m(txt, 3, 14);
+    ASSERT_EQ(getcursorp(txt), 12);
     ASSERT_EQ(getcursorl(txt), 3);
 
 }
