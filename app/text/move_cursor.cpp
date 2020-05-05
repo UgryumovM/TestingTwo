@@ -8,7 +8,7 @@ void move_cursor(text txt, int line, int pos){
         txt->cursor->position = 0;
         return;
     }
-    auto current = txt->node->begin();
+    std::list<string>::iterator current = txt->node->begin();
     int i = 1;
     for(;i < line; i++){
         current++;

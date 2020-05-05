@@ -1,8 +1,9 @@
 #include "_text.h"
+#include <iterator>
 
 void changeline(int line, text txt){
     string buf, buf2;
-    auto current = txt->node->begin();
+    std::list<string>::iterator current = txt->node->begin();
     for(int lp = 0; lp != line - 1; lp++){
         current++;
     }

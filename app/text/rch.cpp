@@ -5,7 +5,7 @@
 void rch(text txt){
     int i = static_cast<int>(txt->cursor->position);
     int line = txt->cursor->line - 1;
-    auto cur = txt->node->begin();
+    std::list<string>::iterator cur = txt->node->begin();
     for(int j = 0; j < line;j++){
         cur++;
     }
