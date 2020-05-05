@@ -17,7 +17,7 @@ extern "C++" {
 TEST(moveTest, Pos){
     text txt = create_text();
 
-    string file2 = "input.txt";
+    string file2 = "testsfiles/input.txt";
     load(txt, file2);
 
     m(txt, 1, 2);
@@ -28,7 +28,7 @@ TEST(moveTest, Pos){
 TEST(moveTest, Neg){
     text txt = create_text();
 
-    string file2 = "input.txt";
+    string file2 = "testsfiles/input.txt";
     load(txt, file2);
 
     m(txt, 0, 0);

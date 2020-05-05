@@ -15,15 +15,15 @@ extern "C++" {
 
 TEST(saveTest, pos){
     text txt = create_text();
-    string inp = "input.txt";
-    string outt = "output.txt";
+    string inp = "testsfiles/input.txt";
+    string outt = "testsfiles/output.txt";
 
     load(txt, inp);
     save(txt, outt.c_str());
 
 
-    string outp = "input.txt";
-    string ide = "output.txt";
+    string outp = "testsfiles/input.txt";
+    string ide = "testsfiles/output.txt";
     int cmp = compare(outp, ide);
     ASSERT_EQ(cmp, 1);
 }

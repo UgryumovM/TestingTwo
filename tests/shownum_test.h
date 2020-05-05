@@ -21,14 +21,14 @@ extern "C++" {
 
 
 TEST(shownTest, Pos){
-    string testOutputFile = "tout.txt";
+    string testOutputFile = "testsfiles/tout.txt";
     int outFd = open(testOutputFile.c_str(),O_WRONLY | O_CREAT, S_IWRITE | S_IREAD);
     int oldOutput = dup(1);
     int ret = dup2(outFd, 1);
 
     text txt = create_text();
 
-    string file = "input.txt";
+    string file = "testsfiles/input.txt";
 
     load(txt, file);
     shownumspaces(txt);
@@ -37,8 +37,8 @@ TEST(shownTest, Pos){
     close(outFd);
     dup2(oldOutput, 1);
 
-    string outp = "tout.txt";
-    string ide = "tcom.txt";
+    string outp = "testsfiles/tout.txt";
+    string ide = "testsfiles/tcom.txt";
     int cmp = compare(outp, ide);
 
     ASSERT_EQ(cmp, 1);

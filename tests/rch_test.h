@@ -13,10 +13,10 @@ extern "C++" {
 }
 
 TEST(rchTest, Pos){
-    string file2 = "input.txt";
+    string file2 = "testsfiles/input.txt";
 
-    string posro = "rpoutput.txt";
-    string posri = "rchp.txt";
+    string posro = "testsfiles/rpoutput.txt";
+    string posri = "testsfiles/rchp.txt";
 
     text txt = create_text();
     load(txt, file2);
@@ -34,14 +34,14 @@ TEST(rchTest, Pos){
 }
 
 TEST(rchTest, Neg){
-    string file2 = "input.txt";
+    string file2 = "testsfiles/input.txt";
     text txt = create_text();
     load(txt, file2);
 
     m(txt,10,0);
 
-    string negro = "rnoutput.txt";
-    string negri = "rchn.txt";
+    string negro = "testsfiles/rnoutput.txt";
+    string negri = "testsfiles/rchn.txt";
 
     rightcdel(txt);
     save(txt, negro.c_str());

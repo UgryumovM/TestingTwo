@@ -13,9 +13,9 @@ extern "C++" {
 }
 
 TEST(clTest, Pos){
-    string file2 = "input.txt";
-    string posout = "output.txt";
-    string poside = "clp.txt";
+    string file2 = "testsfiles/input.txt";
+    string posout = "testsfiles/output.txt";
+    string poside = "testsfiles/clp.txt";
 
     text txt = create_text();
     load(txt, file2);
@@ -29,14 +29,14 @@ TEST(clTest, Pos){
 }
 
 TEST(clTest, Neg){
-    string file2 = "input.txt";
+    string file2 = "testsfiles/input.txt";
     text txt = create_text();
     load(txt, file2);
 
     m(txt,10,0);
 
-    string negout = "output.txt";
-    string negide = "cln.txt";
+    string negout = "testsfiles/output.txt";
+    string negide = "testsfiles/cln.txt";
 
     cn(txt);
     save(txt, negout.c_str());
