@@ -20,7 +20,7 @@ static void show_line(int index, string contents, int cursor, void *data);
 void show(text txt)
 {
     /* Применяем функцию show_line к каждой строке текста */
-    process_forward(txt, show_line, nullptr);
+    process_forward(txt, show_line, NULL);
 }
 
 /**
