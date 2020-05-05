@@ -6,7 +6,7 @@
 void count_spaces(int index, string contents, int cursor, void *data);
 
 void shownumspaces(text txt){
-    process_forward(txt, count_spaces, nullptr);
+    process_forward(txt, count_spaces, NULL);
 }
 
 void count_spaces(int index, string contents, int cursor, void *data)
