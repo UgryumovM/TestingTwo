@@ -27,7 +27,8 @@ void process_forward(
         return;
     } 
     /* Текст ненулевой длины должен содержать хотя бы одну строку */
-    assert(!txt->node->empty());
+    if(txt->node->empty())
+        return;
     /* Стартуем с начальной строки текста */
     std::list<string>::iterator current = txt->node->begin();
     int index = 0;
