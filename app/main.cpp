@@ -56,7 +56,7 @@ int main()
         }
 
 	if (strcmp(cmd, "save") == 0) {
-            if ((arg = strtok(nullptr, " \n")) == nullptr) {
+            if ((arg = strtok(NULL, " \n")) == NULL) {
                 fprintf(stderr, "Usage: load filename\n");
             } else {
                 save(txt, arg);
@@ -65,11 +65,11 @@ int main()
         }
 
 	if (strcmp(cmd, "m") == 0) {
-	    if ((arg = strtok(nullptr, " \n")) == NULL) {
+        if ((arg = strtok(NULL, " \n")) == NULL) {
 		fprintf(stderr, "Usage: line number, position\n");
 		continue;
 	    }
-	    if((arg1 = strtok(nullptr, " \n")) == NULL){
+        if((arg1 = strtok(NULL, " \n")) == NULL){
 		fprintf(stderr, "Usage : line number, position\n");
 		continue;
 	    }
