@@ -1,4 +1,4 @@
 [![Build Status](https://travis-ci.org/UgryumovM/TestingTwo.svg?branch=master)](https://travis-ci.org/UgryumovM/TestingTwo)
 [![Coverage Status](https://coveralls.io/repos/UgryumovM/TestingTwo/badge.svg?branch=master)](https://coveralls.io/github/UgryumovM/TestingTwo?branch=master)
-[![Quality Gate](https://sonarcloud.io/api/project_badges/measure?project=qmake-gtest&metric=alert_status)](https://sonarcloud.io/dashboard?id=UgryumovM_TestingOne)
-[![Code smells](https://sonarcloud.io/api/project_badges/measure?project=qmake-gtest&metric=code_smells)](https://sonarcloud.io/dashboard?id=UgryumovM_TestingOne)
+[![Quality Gate](https://sonarcloud.io/api/project_badges/measure?project=qmake-gtest&metric=alert_status)](https://sonarcloud.io/dashboard?id=UgryumovM_TestingTwo)
+[![Code smells](https://sonarcloud.io/api/project_badges/measure?project=qmake-gtest&metric=code_smells)](https://sonarcloud.io/dashboard?id=UgryumovM_TestingTwo)
