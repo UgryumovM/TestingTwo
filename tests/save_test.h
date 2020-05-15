@@ -22,7 +22,7 @@ TEST(saveTest, pos){
 
 
     save(txt, "Soutput.txt");
-
+    load(txt, "Soutput.txt");
     std::ifstream f("Soutput.txt");
     std::string fileo;
 

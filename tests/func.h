@@ -9,6 +9,7 @@
 
 void input(text txt){
     remove_all(txt);
+    show(txt);
     append_line(txt, "sample text\n");
     append_line(txt, "sample text 2\n");
     append_line(txt, "s a m p l e\n");
@@ -16,6 +17,7 @@ void input(text txt){
     append_line(txt, "\n");
     append_line(txt, "s\n");
     append_line(txt, "4\0");
+    show(txt);
 }
 
 #endif // FUNC_H
