@@ -21,27 +21,16 @@ extern "C++" {
 
 
 TEST(shownTest, Pos){
-    string testOutputFile = "testsfiles/tout.txt";
-    int outFd = open(testOutputFile.c_str(),O_WRONLY | O_CREAT, S_IWRITE | S_IREAD);
-    int oldOutput = dup(1);
-    int ret = dup2(outFd, 1);
-
     text txt = create_text();
+    input(txt);
 
-    string file = "testsfiles/input.txt";
+    string eoutput = "1\n2\n5\n6\n0\n0\n0\n";
 
-    load(txt, file);
+    testing::internal::CaptureStdout();
     shownumspaces(txt);
+    string output = testing::internal::GetCapturedStdout();
 
-    close(ret);
-    close(outFd);
-    dup2(oldOutput, 1);
-
-    string outp = "testsfiles/tout.txt";
-    string ide = "testsfiles/tcom.txt";
-    int cmp = compare(outp, ide);
-
-    ASSERT_EQ(cmp, 1);
+    ASSERT_EQ(eoutput, output);
 }
 
 

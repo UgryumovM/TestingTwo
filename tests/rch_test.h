@@ -3,6 +3,7 @@
 
 #include <gtest/gtest.h>
 #include <gmock/gmock-matchers.h>
+#include <fstream>
 #include "func.h"
 
 /* using namespace testing; */
@@ -13,39 +14,47 @@ extern "C++" {
 }
 
 TEST(rchTest, Pos){
-    string file2 = "testsfiles/input.txt";
-
-    string posro = "testsfiles/rpoutput.txt";
-    string posri = "testsfiles/rchp.txt";
+    string posro = "POut";
 
     text txt = create_text();
-    load(txt, file2);
+    input(txt);
 
-    show(txt);
+    string inputs = "ample text\nsample text 2\ns a m p l e\nt e x t   3\n\ns\n4\0";
 
     m(txt, 1, 1);
 
     rightcdel(txt);
 
-    show(txt);
-
     save(txt, posro.c_str());
-    ASSERT_EQ(compare(posro, posri), 1);
+
+    std::ifstream f(posro);
+
+    std::string fileo;
+
+    fileo.assign( (std::istreambuf_iterator<char>(f) ),
+                            (std::istreambuf_iterator<char>()    ) );
+
+    ASSERT_EQ(inputs, fileo);
 }
 
 TEST(rchTest, Neg){
-    string file2 = "testsfiles/input.txt";
     text txt = create_text();
-    load(txt, file2);
+    input(txt);
+
+    string inputs = "sample text\nsample text 2\ns a m p l e\nt e x t   3\n\ns\n4\0";
 
     m(txt,10,0);
 
-    string negro = "testsfiles/rnoutput.txt";
-    string negri = "testsfiles/rchn.txt";
+    string negro = "NOut";
 
     rightcdel(txt);
     save(txt, negro.c_str());
 
-    ASSERT_EQ(compare(negro, negri), 1);
+    std::ifstream f(negro);
+    std::string fileo;
+    fileo.assign( (std::istreambuf_iterator<char>(f) ),
+                            (std::istreambuf_iterator<char>()    ) );
+
+    ASSERT_EQ(inputs, fileo);
 }
 #endif // RCH_TEST_H

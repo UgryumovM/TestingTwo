@@ -3,35 +3,19 @@
 
 #include <string>
 #include <iostream>
+#include "text/_text.h"
+#include "text/text.h"
+#include "common.h"
 
-int compare(std::string s1, std::string s2){
-    FILE *f1;
-    if((f1 = fopen(s1.c_str(), "r")) == NULL){
-        std:: cout << "Cannot open file" << s1 << std::endl;
-        exit(1);
-    }
-    FILE *f2;
-    if((f2 = fopen(s2.c_str(), "r")) == NULL){
-        std:: cout << "Cannot open file" << s2 << std::endl;
-        exit(1);
-    }
-    char c1, c2;
-    c1 = fgetc(f1);
-    c2 = fgetc(f2);
-    for(unsigned long i = 1; (c1 != EOF) && (c2 != EOF); i++){
-        c1 = fgetc(f1);
-        c2 = fgetc(f2);
-        if(c1 != c2){
-            fclose(f1);
-            fclose(f2);
-            return 0;
-        }
-    }
-    fclose(f1);
-    fclose(f2);
-    if((c1 == EOF && c2 != EOF) || (c1 != EOF && c2 == EOF))
-        return 0;
-    return 1;
+void input(text txt){
+    remove_all(txt);
+    append_line(txt, "sample text\n");
+    append_line(txt, "sample text 2\n");
+    append_line(txt, "s a m p l e\n");
+    append_line(txt, "t e x t   3\n");
+    append_line(txt, "\n");
+    append_line(txt, "s\n");
+    append_line(txt, "4\0");
 }
 
 #endif // FUNC_H

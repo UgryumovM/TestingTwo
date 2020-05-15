@@ -4,6 +4,8 @@
 #include <gtest/gtest.h>
 #include <gmock/gmock-matchers.h>
 #include <fstream>
+#include <fcntl.h>
+#include <unistd.h>
 #include "func.h"
 
 extern "C++" {
@@ -12,20 +14,23 @@ extern "C++" {
     #include "common.h"
 }
 
-
 TEST(saveTest, pos){
     text txt = create_text();
-    string inp = "testsfiles/input.txt";
-    string outt = "testsfiles/output.txt";
-
-    load(txt, inp);
-    save(txt, outt.c_str());
+    input(txt);
+    string inputs;
+    inputs = "sample text\nsample text 2\ns a m p l e\nt e x t   3\n\ns\n4\0";
 
 
-    string outp = "testsfiles/input.txt";
-    string ide = "testsfiles/output.txt";
-    int cmp = compare(outp, ide);
-    ASSERT_EQ(cmp, 1);
+    save(txt, "Soutput.txt");
+
+    std::ifstream f("Soutput.txt");
+    std::string fileo;
+
+    fileo.assign( (std::istreambuf_iterator<char>(f) ),
+                            (std::istreambuf_iterator<char>()    ) );
+
+    ASSERT_EQ(inputs, fileo);
+    f.close();
 }
 
 

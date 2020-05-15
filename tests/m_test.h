@@ -3,6 +3,7 @@
 
 #include <gtest/gtest.h>
 #include <gmock/gmock-matchers.h>
+#include "func.h"
 
 /* using namespace testing; */
 extern "C++" {
@@ -16,9 +17,7 @@ extern "C++" {
 
 TEST(moveTest, Pos){
     text txt = create_text();
-
-    string file2 = "testsfiles/input.txt";
-    load(txt, file2);
+    input(txt);
 
     m(txt, 1, 2);
     ASSERT_EQ(getcursorp(txt), 1);
@@ -27,9 +26,7 @@ TEST(moveTest, Pos){
 
 TEST(moveTest, Neg){
     text txt = create_text();
-
-    string file2 = "testsfiles/input.txt";
-    load(txt, file2);
+    input(txt);
 
     m(txt, 0, 0);
     ASSERT_EQ(getcursorp(txt), 0);

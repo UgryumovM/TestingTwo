@@ -15,18 +15,6 @@ QMAKE_CXXFLAGS += -fprofile-arcs -ftest-coverage
 QMAKE_CFLAGS += -fprofile-arcs -ftest-coverage
 LIBS += -lgcov
 
-DISTFILES += \
-    testsfiles/cln.txt \
-    testsfiles/clp.txt \
-    testsfiles/input.txt \
-    testsfiles/output.txt \
-    testsfiles/rchn.txt \
-    testsfiles/rchp.txt \
-    testsfiles/rnoutput.txt \
-    testsfiles/rpoutput.txt \
-    testsfiles/tcom.txt \
-    testsfiles/tout.txt
-
 SOURCES += main.cpp \
     ../app/cn.cpp \
     ../app/load.cpp \

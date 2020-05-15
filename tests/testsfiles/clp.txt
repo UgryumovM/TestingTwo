@@ -1,7 +1,0 @@
-sample text 2
-sample text
-s a m p l e
-t e x t   3
-
-s
-4
