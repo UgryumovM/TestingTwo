@@ -14,8 +14,6 @@ extern "C++" {
 }
 
 TEST(rchTest, Pos){
-    string posro = "POut";
-
     text txt = create_text();
     input(txt);
 
@@ -25,9 +23,9 @@ TEST(rchTest, Pos){
 
     rightcdel(txt);
 
-    save(txt, posro.c_str());
+    save(txt, "POut");
 
-    std::ifstream f(posro);
+    std::ifstream f("POut");
 
     std::string fileo;
 
@@ -45,12 +43,10 @@ TEST(rchTest, Neg){
 
     m(txt,10,0);
 
-    string negro = "NOut";
-
     rightcdel(txt);
-    save(txt, negro.c_str());
+    save(txt, "NOut");
 
-    std::ifstream f(negro);
+    std::ifstream f("NOut");
     std::string fileo;
     fileo.assign( (std::istreambuf_iterator<char>(f) ),
                             (std::istreambuf_iterator<char>()    ) );

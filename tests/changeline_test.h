@@ -14,7 +14,6 @@ extern "C++" {
 }
 
 TEST(clTest, Pos){
-    string posout = "Poutput";
     string inputs = "sample text 2\nsample text\ns a m p l e\nt e x t   3\n\ns\n4\0";
     text txt = create_text();
     input(txt);
@@ -22,10 +21,10 @@ TEST(clTest, Pos){
     m(txt, 1, 0);
 
     cn(txt);
-    save(txt, posout.c_str());
+    save(txt, "Poutput");
 
     string poside;
-    std::ifstream f(posout);
+    std::ifstream f("Poutput");
 
     std::string fileo;
 
